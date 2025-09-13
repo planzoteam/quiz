@@ -15,7 +15,7 @@ export class HomePage {
     if (!code) return;
 
     // Wyślij kod do backendu, aby dostać access token
-    const tokenRes = await fetch('https://80e2e8a74dc2.ngrok-free.app/api/users/token', {
+    const tokenRes = await fetch('https://62b8222c297f.ngrok-free.app/api/users/token', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(code),
@@ -26,7 +26,7 @@ export class HomePage {
 
     // Pobierz playlisty
     const playlistsRes = await fetch(
-      `https://80e2e8a74dc2.ngrok-free.app/api/users/playlists?accessToken=${accessToken}`
+      `https://62b8222c297f.ngrok-free.app/api/users/playlists?accessToken=${accessToken}`
     );
     const playlistsData = await playlistsRes.json();
 
